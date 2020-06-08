@@ -1,0 +1,11 @@
+
+#查询配置参数
+query AppSetting{
+appsetting{
+cdn_url
+library_cdn_url
+micro_api_url
+web_domain
+ucloud_bucket
+}
+}

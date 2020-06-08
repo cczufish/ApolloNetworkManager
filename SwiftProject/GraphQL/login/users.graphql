@@ -1,0 +1,15 @@
+
+# 家长登录
+mutation users($username: String!, $password: String!) {
+createUserToken(username: $username, password: $password,role: parent) {
+id
+mobile
+name
+token {
+token
+expired_at
+refresh_expired_at
+}
+
+}
+}
