@@ -17,6 +17,44 @@ Graphql
 
 如下2个图所示
 
+项目里面 WechatIMG35.png
+
+```javascript
+
+# Type a script or drag a script file from your workspace to insert its path.
+
+APOLLO_FRAMEWORK_PATH="${SRCROOT}/${TARGET_NAME}/GraphQL/"
+
+if [ -z "$APOLLO_FRAMEWORK_PATH" ]; then
+echo "error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project."
+exit 1
+fi
+
+cd "${SRCROOT}/${TARGET_NAME}/GraphQL/login"
+"${APOLLO_FRAMEWORK_PATH}"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile="schema.json" API.swift
+
+```
+
+项目里面 WechatIMG36.png
+
+```javascript
+
+# Type a script or drag a script file from your workspace to insert its path.
+
+APOLLO_FRAMEWORK_PATH="${SRCROOT}/${TARGET_NAME}/GraphQL/"
+
+if [ -z "$APOLLO_FRAMEWORK_PATH" ]; then
+echo "error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project."
+exit 1
+fi
+
+cd "${SRCROOT}/${TARGET_NAME}/GraphQL/home"
+"${APOLLO_FRAMEWORK_PATH}"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile="schema.json" APK.swift
+
+
+```
+
+
 ![avatar](https://github.com/cczufish/ApolloNetworkManager/blob/master/WechatIMG35.png)
 
 ![avatar](https://github.com/cczufish/ApolloNetworkManager/blob/master/WechatIMG36.png)
@@ -24,6 +62,8 @@ Graphql
 项目结构 
 
 ![avatar](https://github.com/cczufish/ApolloNetworkManager/blob/master/WechatIMG34.png)
+
+
 
 
 
