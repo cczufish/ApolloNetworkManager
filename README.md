@@ -23,7 +23,7 @@ pod ‘ApolloNetworkManager’
 
 ```javascript
 
-ApolloNetworkManager.shared.apiurl = "https://dev.api.xxxxx.com/graphql" // 自己服务器的端点地址
+        ApolloNetworkManager.shared.apiurl = "https://dev.api.xxxxx.com/graphql" // 自己服务器的端点地址
         ApolloNetworkManager.shared.httpHeader = [:] // 自己服务器的httpHeader信息
 
         /*调用完登录接口再去调用第二个接口*/
