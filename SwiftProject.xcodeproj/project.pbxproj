@@ -14,6 +14,7 @@
 		33D0308923FBC6C800710E34 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0308823FBC6C800710E34 /* SwiftProjectTests.swift */; };
 		33D0309423FBC6C800710E34 /* SwiftProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0309323FBC6C800710E34 /* SwiftProjectUITests.swift */; };
 		5BB53776248E4B7700536CC8 /* ApolloNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB53775248E4B7700536CC8 /* ApolloNetworkManager.swift */; };
+		5BB53778248E4C5600536CC8 /* ApolloNetworkManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5BB53777248E4C5600536CC8 /* ApolloNetworkManager.podspec */; };
 		5BB9AD3B2488DD190057D370 /* FetchLessons.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9AD322488DD190057D370 /* FetchLessons.graphql */; };
 		5BB9AD3D2488DD190057D370 /* RSGraphQLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9AD342488DD190057D370 /* RSGraphQLError.swift */; };
 		5BB9AD3E2488DD190057D370 /* users.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9AD362488DD190057D370 /* users.graphql */; };
@@ -54,6 +55,7 @@
 		33D0309323FBC6C800710E34 /* SwiftProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProjectUITests.swift; sourceTree = "<group>"; };
 		33D0309523FBC6C800710E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB53775248E4B7700536CC8 /* ApolloNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloNetworkManager.swift; sourceTree = "<group>"; };
+		5BB53777248E4C5600536CC8 /* ApolloNetworkManager.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = ApolloNetworkManager.podspec; sourceTree = SOURCE_ROOT; };
 		5BB9AD322488DD190057D370 /* FetchLessons.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FetchLessons.graphql; sourceTree = "<group>"; };
 		5BB9AD342488DD190057D370 /* RSGraphQLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSGraphQLError.swift; sourceTree = "<group>"; };
 		5BB9AD362488DD190057D370 /* users.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.graphql; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		33D0307023FBC6C400710E34 /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				5BB53777248E4C5600536CC8 /* ApolloNetworkManager.podspec */,
 				5BB9AD2E2488DD190057D370 /* GraphQL */,
 				33D0307123FBC6C400710E34 /* AppDelegate.swift */,
 				33D0307523FBC6C400710E34 /* ViewController.swift */,
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB53778248E4C5600536CC8 /* ApolloNetworkManager.podspec in Resources */,
 				33D0307E23FBC6C700710E34 /* LaunchScreen.storyboard in Resources */,
 				5BB9AD3E2488DD190057D370 /* users.graphql in Resources */,
 				33D0307B23FBC6C700710E34 /* Assets.xcassets in Resources */,
