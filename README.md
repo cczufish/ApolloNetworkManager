@@ -27,7 +27,7 @@ pod ‘ApolloNetworkManager’
         ApolloNetworkManager.shared.httpHeader = [:] // 自己服务器的httpHeader信息
 
         /*调用完登录接口再去调用第二个接口*/
-        ApolloNetworkManager.shared.performMutation(mutation: UsersMutation.init(username: "13500000000", password: "123456"), client: StoreManager.shared.apollo){ (result,error) in
+        ApolloNetworkManager.shared.performMutation(mutation: UsersMutation.init(username: "13500000000", password: "123456"), client: ApolloNetworkManager.shared.apollo){ (result,error) in
             if let err = error{
                 print(err)
             }else{
@@ -39,7 +39,7 @@ pod ‘ApolloNetworkManager’
         }
         
         
-        ApolloNetworkManager.shared.performFetch(fetch: AppSettingQuery(), client: StoreManager.shared.apolloClientWithToken) { (result,error) in
+        ApolloNetworkManager.shared.performFetch(fetch: AppSettingQuery(), client: ApolloNetworkManager.shared.apolloClientWithToken) { (result,error) in
             if let err = error{
                 print(err)
             }else{
