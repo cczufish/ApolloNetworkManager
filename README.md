@@ -1,4 +1,5 @@
 # ApolloNetworkManager
+
 a GraphiQL tool for swift language ApolloNetworkManager 
 
 Graphql 
@@ -11,6 +12,48 @@ Graphql
 
 请先看官方的文档
 
+
+安装
+
+pod ‘ApolloNetworkManager’
+
+使用
+
+调用逻辑
+
+```javascript
+
+        ApolloNetworkManager.shared.apiurl = "https://dev.api.xxxxx.com/graphql" // 自己服务器的端点地址
+        ApolloNetworkManager.shared.httpHeader = [:] // 自己服务器的httpHeader信息
+
+        /*调用完登录接口再去调用第二个接口*/
+        ApolloNetworkManager.shared.performMutation(mutation: UsersMutation.init(username: "13500000000", password: "123456"), client: StoreManager.shared.apollo){ (result,error) in
+            if let err = error{
+                print(err)
+            }else{
+                if let data = result?.data?.createUserToken {
+                    UserDefaults.standard.set(data.token, forKey: "token")
+                    UserDefaults.standard.set(data.token, forKey: "studentid")
+                }
+            }
+        }
+        
+        
+        ApolloNetworkManager.shared.performFetch(fetch: AppSettingQuery(), client: StoreManager.shared.apolloClientWithToken) { (result,error) in
+            if let err = error{
+                print(err)
+            }else{
+                if let data = result?.data?.appsetting {
+                    print(data.cdnUrl)
+                    
+                }
+            }
+        }
+        
+        
+```
+
+
 写在前面：
 项目
 项目运行
@@ -22,7 +65,6 @@ Graphql
 项目运行不起来的，主要看逻辑
 项目运行不起来的，主要看逻辑，
 项目运行不起来的，主要看逻辑，供参考
-
 
 
 
@@ -101,7 +143,7 @@ import Apollo
 
 
 
-extension StoreManager: HTTPNetworkTransportPreflightDelegate {
+extension ApolloNetworkManager: HTTPNetworkTransportPreflightDelegate {
     func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
         return true
     }
@@ -111,40 +153,22 @@ extension StoreManager: HTTPNetworkTransportPreflightDelegate {
         
         request.timeoutInterval = 10 // 接口超时时间10s
         
-        let appversion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String // app版本号
-        let iosVersion = UIDevice.current.systemVersion //iOS系统版本
-        let modelName = "iPhone" //设备具体型号
-        
-        // 用于没有登录的时候的请求
-        if UserDefaults.standard.object(forKey: "token")  == nil {
-            request.allHTTPHeaderFields = ["AppVersion": appversion, "OsName": iosVersion, "DeviceName": modelName,"AppName":"PARENT"]
-        } else { // 用于登录后的请求
-            
-            let token = UserDefaults.standard.object(forKey: "token") as! String
-            var idStr = ""
-            if UserDefaults.standard.object(forKey: "studentid") is NSNumber {
-                let id =  UserDefaults.standard.object(forKey: "studentid") as! NSNumber
-                idStr = id.stringValue
-            } else {
-                let id =  UserDefaults.standard.object(forKey: "studentid") as! String
-                idStr = id
-            }
-            
-            request.allHTTPHeaderFields = ["AppVersion": appversion, "OsName": iosVersion, "DeviceName": modelName,"AppName":"PARENT","Authorization": "bearer \(token)","LoginId":idStr]
-            
-        }
+        request.allHTTPHeaderFields = httpHeader
         
     }
 }
+
 // 业务回调
 public typealias OperationResultHandler<Operation: GraphQLOperation> = (_ result: GraphQLResult<Operation.Data>?, _ error: Error?) -> Void
 
-class StoreManager: NSObject {
+class ApolloNetworkManager: NSObject {
     
-    static let shared = StoreManager()
+    static let shared = ApolloNetworkManager()
     
     var apiurl:String! // 服务器地址 endPoint
     
+    var httpHeader:[String:String] = [:]
+
     // noauth
     private(set) lazy var apollo: ApolloClient = {
         let url = apiurl + "/noauth"
@@ -262,39 +286,7 @@ class StoreManager: NSObject {
     
 }
 
-```
 
-调用逻辑
-
-```javascript
-
-StoreManager.shared.apiurl = "https://dev.api.xxxxx.com/graphql" // 自己服务器的端点地址
-        
-        /*调用完登录接口再去调用第二个接口*/
-        StoreManager.shared.performMutation(mutation: UsersMutation.init(username: "13500000000", password: "123456"), client: StoreManager.shared.apollo){ (result,error) in
-            if let err = error{
-                print(err)
-            }else{
-                if let data = result?.data?.createUserToken {
-                    UserDefaults.standard.set(data.token, forKey: "token")
-                    UserDefaults.standard.set(data.token, forKey: "studentid")
-                }
-            }
-        }
-        
-        
-        StoreManager.shared.performFetch(fetch: AppSettingQuery(), client: StoreManager.shared.apolloClientWithToken) { (result,error) in
-            if let err = error{
-                print(err)
-            }else{
-                if let data = result?.data?.appsetting {
-                    print(data.cdnUrl)
-                    
-                }
-            }
-        }
-        
-        
 ```
 
 
