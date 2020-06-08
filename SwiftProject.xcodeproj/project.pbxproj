@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		33D0307223FBC6C400710E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0307123FBC6C400710E34 /* AppDelegate.swift */; };
-		33D0307423FBC6C400710E34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0307323FBC6C400710E34 /* SceneDelegate.swift */; };
 		33D0307623FBC6C400710E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0307523FBC6C400710E34 /* ViewController.swift */; };
-		33D0307923FBC6C400710E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D0307723FBC6C400710E34 /* Main.storyboard */; };
 		33D0307B23FBC6C700710E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D0307A23FBC6C700710E34 /* Assets.xcassets */; };
 		33D0307E23FBC6C700710E34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D0307C23FBC6C700710E34 /* LaunchScreen.storyboard */; };
 		33D0308923FBC6C800710E34 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0308823FBC6C800710E34 /* SwiftProjectTests.swift */; };
 		33D0309423FBC6C800710E34 /* SwiftProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D0309323FBC6C800710E34 /* SwiftProjectUITests.swift */; };
+		5BB53776248E4B7700536CC8 /* ApolloNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB53775248E4B7700536CC8 /* ApolloNetworkManager.swift */; };
 		5BB9AD3B2488DD190057D370 /* FetchLessons.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9AD322488DD190057D370 /* FetchLessons.graphql */; };
 		5BB9AD3D2488DD190057D370 /* RSGraphQLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9AD342488DD190057D370 /* RSGraphQLError.swift */; };
 		5BB9AD3E2488DD190057D370 /* users.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9AD362488DD190057D370 /* users.graphql */; };
 		5BB9AD462488EF950057D370 /* run-bundled-codegen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9AD452488EF950057D370 /* run-bundled-codegen.sh */; };
 		5BB9AD4F2488F41E0057D370 /* APK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9AD4E2488F41E0057D370 /* APK.swift */; };
 		5BB9AD512488F4260057D370 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9AD502488F4260057D370 /* API.swift */; };
-		5BB9AD532488F4600057D370 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9AD522488F4600057D370 /* StoreManager.swift */; };
 		5D79F41E74FA14B14FCA7984 /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6E34BF187A414B6BADFB5E /* Pods_SwiftProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +43,7 @@
 /* Begin PBXFileReference section */
 		33D0306E23FBC6C400710E34 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D0307123FBC6C400710E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33D0307323FBC6C400710E34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33D0307523FBC6C400710E34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		33D0307823FBC6C400710E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33D0307A23FBC6C700710E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D0307D23FBC6C700710E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D0307F23FBC6C700710E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,13 +53,13 @@
 		33D0308F23FBC6C800710E34 /* SwiftProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D0309323FBC6C800710E34 /* SwiftProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProjectUITests.swift; sourceTree = "<group>"; };
 		33D0309523FBC6C800710E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB53775248E4B7700536CC8 /* ApolloNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloNetworkManager.swift; sourceTree = "<group>"; };
 		5BB9AD322488DD190057D370 /* FetchLessons.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FetchLessons.graphql; sourceTree = "<group>"; };
 		5BB9AD342488DD190057D370 /* RSGraphQLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSGraphQLError.swift; sourceTree = "<group>"; };
 		5BB9AD362488DD190057D370 /* users.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.graphql; sourceTree = "<group>"; };
 		5BB9AD452488EF950057D370 /* run-bundled-codegen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "run-bundled-codegen.sh"; sourceTree = "<group>"; };
 		5BB9AD4E2488F41E0057D370 /* APK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APK.swift; sourceTree = "<group>"; };
 		5BB9AD502488F4260057D370 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		5BB9AD522488F4600057D370 /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		5C6C6908D9F516F261FC86B9 /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		D4CD3824D1AD2518B6B98524 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DD6E34BF187A414B6BADFB5E /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,9 +135,7 @@
 			children = (
 				5BB9AD2E2488DD190057D370 /* GraphQL */,
 				33D0307123FBC6C400710E34 /* AppDelegate.swift */,
-				33D0307323FBC6C400710E34 /* SceneDelegate.swift */,
 				33D0307523FBC6C400710E34 /* ViewController.swift */,
-				33D0307723FBC6C400710E34 /* Main.storyboard */,
 				33D0307A23FBC6C700710E34 /* Assets.xcassets */,
 				33D0307C23FBC6C700710E34 /* LaunchScreen.storyboard */,
 				33D0307F23FBC6C700710E34 /* Info.plist */,
@@ -167,13 +161,21 @@
 			path = SwiftProjectUITests;
 			sourceTree = "<group>";
 		};
+		5BB53774248E4B7700536CC8 /* ApolloNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				5BB53775248E4B7700536CC8 /* ApolloNetworkManager.swift */,
+			);
+			path = ApolloNetworkManager;
+			sourceTree = SOURCE_ROOT;
+		};
 		5BB9AD2E2488DD190057D370 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				5BB53774248E4B7700536CC8 /* ApolloNetworkManager */,
 				5BB9AD352488DD190057D370 /* login */,
 				5BB9AD2F2488DD190057D370 /* home */,
 				5BB9AD342488DD190057D370 /* RSGraphQLError.swift */,
-				5BB9AD522488F4600057D370 /* StoreManager.swift */,
 				5BB9AD452488EF950057D370 /* run-bundled-codegen.sh */,
 			);
 			path = GraphQL;
@@ -308,7 +310,6 @@
 				33D0307E23FBC6C700710E34 /* LaunchScreen.storyboard in Resources */,
 				5BB9AD3E2488DD190057D370 /* users.graphql in Resources */,
 				33D0307B23FBC6C700710E34 /* Assets.xcassets in Resources */,
-				33D0307923FBC6C400710E34 /* Main.storyboard in Resources */,
 				5BB9AD3B2488DD190057D370 /* FetchLessons.graphql in Resources */,
 				5BB9AD462488EF950057D370 /* run-bundled-codegen.sh in Resources */,
 			);
@@ -414,10 +415,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB9AD3D2488DD190057D370 /* RSGraphQLError.swift in Sources */,
-				5BB9AD532488F4600057D370 /* StoreManager.swift in Sources */,
 				33D0307623FBC6C400710E34 /* ViewController.swift in Sources */,
 				33D0307223FBC6C400710E34 /* AppDelegate.swift in Sources */,
-				33D0307423FBC6C400710E34 /* SceneDelegate.swift in Sources */,
+				5BB53776248E4B7700536CC8 /* ApolloNetworkManager.swift in Sources */,
 				5BB9AD512488F4260057D370 /* API.swift in Sources */,
 				5BB9AD4F2488F41E0057D370 /* APK.swift in Sources */,
 			);
@@ -455,14 +455,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		33D0307723FBC6C400710E34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				33D0307823FBC6C400710E34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		33D0307C23FBC6C700710E34 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

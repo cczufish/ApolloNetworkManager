@@ -20,34 +20,11 @@ extension ApolloNetworkManager: HTTPNetworkTransportPreflightDelegate {
         
         request.timeoutInterval = 10 // 接口超时时间10s
         
-//        let appversion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String // app版本号
-//        let iosVersion = UIDevice.current.systemVersion //iOS系统版本
-//        let modelName = "iPhone" //设备具体型号
-//
-//        // 用于没有登录的时候的请求
-//        if UserDefaults.standard.object(forKey: "token")  == nil {
-//            request.allHTTPHeaderFields = ["AppVersion": appversion, "OsName": iosVersion, "DeviceName": modelName,"AppName":"PARENT"]
-//        } else { // 用于登录后的请求
-//
-//            let token = UserDefaults.standard.object(forKey: "token") as! String
-//            var idStr = ""
-//            if UserDefaults.standard.object(forKey: "studentid") is NSNumber {
-//                let id =  UserDefaults.standard.object(forKey: "studentid") as! NSNumber
-//                idStr = id.stringValue
-//            } else {
-//                let id =  UserDefaults.standard.object(forKey: "studentid") as! String
-//                idStr = id
-//            }
-//
-//            request.allHTTPHeaderFields = ["AppVersion": appversion, "OsName": iosVersion, "DeviceName": modelName,"AppName":"PARENT","Authorization": "bearer \(token)","LoginId":idStr]
-//
-//        }
-        
         request.allHTTPHeaderFields = httpHeader
-
         
     }
 }
+
 // 业务回调
 public typealias OperationResultHandler<Operation: GraphQLOperation> = (_ result: GraphQLResult<Operation.Data>?, _ error: Error?) -> Void
 
