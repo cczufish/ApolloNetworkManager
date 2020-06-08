@@ -10,7 +10,7 @@ import Apollo
 
 
 
-extension StoreManager: HTTPNetworkTransportPreflightDelegate {
+extension ApolloNetworkManager: HTTPNetworkTransportPreflightDelegate {
     func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
         return true
     }
@@ -42,21 +42,23 @@ extension StoreManager: HTTPNetworkTransportPreflightDelegate {
 //            request.allHTTPHeaderFields = ["AppVersion": appversion, "OsName": iosVersion, "DeviceName": modelName,"AppName":"PARENT","Authorization": "bearer \(token)","LoginId":idStr]
 //
 //        }
+        
         request.allHTTPHeaderFields = httpHeader
 
+        
     }
 }
 // 业务回调
 public typealias OperationResultHandler<Operation: GraphQLOperation> = (_ result: GraphQLResult<Operation.Data>?, _ error: Error?) -> Void
 
-class StoreManager: NSObject {
+class ApolloNetworkManager: NSObject {
     
-    static let shared = StoreManager()
+    static let shared = ApolloNetworkManager()
     
     var apiurl:String! // 服务器地址 endPoint
     
     var httpHeader:[String:String] = [:]
-    
+
     // noauth
     private(set) lazy var apollo: ApolloClient = {
         let url = apiurl + "/noauth"
